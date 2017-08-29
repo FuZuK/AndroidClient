@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Milliy.Net</string>
+    <string name="action_settings">Sozlamalar</string>
+    <string name="dialog_loading">Yuklanmoqda</string>
+    <string name="no_connection">Inernet bilan bog\'liq muammo yuzaga keldi</string>
+    <string name="dialog_continue">Davom etish</string>
+    <string name="dialog_yes">Xa</string>
+    <string name="dialog_no">Yo\'q</string>
+    <string name="exit">Chiqish</string>
+    <string name="notif_about">E\'lonlar</string>
+    <string name="prefs_adding">Qo\'shimcha</string>
+    <string name="prefs_sound">Ovoz</string>
+    <string name="prefs_vibration">Qimirlash ishorasi</string>
+    <string name="prefs_onlyWiFi">Faqat Wi-Fi</string>
+    <string name="prefs_interval">Yangilanish</string>
+    <string name="second">Soniyada</string>
+    <string name="seconds">Soniya</string>
+    <string name="minute">Daqiqada</string>
+    <string name="minutes">Daqiqa</string>
+    <string name="field_hint_nick">VODIY.BIZ Saytidagi nikingiz?</string>
+    <string name="field_hint_password">Parolingiz?</string>
+    <string name="button_login">KIRISH</string>
+    <string name="error_empty_data">Ma\'lumotni kiriting</string>
+    <string name="error_wrong_nick_or_password">Parol yoki nik xato kiritildi</string>
+    <string name="message_login_success">Siz VODIY Obuna ga kirdingiz</string>
+    <string name="notif_about_mail">Yangi xabarlar</string>
+    <string name="notif_about_discussions">Muhokamalar</string>
+    <string name="notif_about_notification">E\'lonlar</string>
+    <string name="notif_about_tape">Tasmalar</string>
+    <string name="notif_about_friends">Do\'stlik takliflari</string>
+    <string name="notif_about_guests">Mehmonlar</string>
+    <string name="error_some_error">Xatolik yuz berdi</string>
+    <string name="def_nick"></string>
+    <string name="def_password"></string>
+    <string name="idesc_horiz_sep">GR</string>
+    
+    <string name="message_from">Xabar: </string>
+    <string name="discussions">Muhokamalar</string>
+    <string name="discussions_1_new">Yangi muhokama</string>
+    <string name="discussions_2_new">Yangi muhokama</string>
+    <string name="discussions_5_new">Yangi muhokama</string>
+    <string name="notifications">E\'lonlar</string>
+    <string name="notifications_1_new">Yangi e\'lon</string>
+    <string name="notifications_2_new">Yangi e\'lon</string>
+    <string name="notifications_5_new">Yangi e\'lon</string>
+    <string name="tape">Tasmalar</string>
+    <string name="tape_1_new">Yangi tasma</string>
+    <string name="tape_2_new">Yangi tasma</string>
+    <string name="tape_5_new">Yangi tasma</string>
+    <string name="in_tape">Tasmaga</string>
+    <string name="user_want_to_be_friend">Ushbu foydalanuvchi siz bilan do\'stlashmoqchi</string>
+    <string name="want_to_be_your_friend">Ushbu foydalanuvchi siz bilan do\'stlashmoqchi</string>
+    <string name="user_visited_your_page">Ushbu foydalanuvchi sizga mehmon bo\'ldi</string>
+    <string name="visited_your_page">Sahifangiz mehmonlari</string>
+
+</resources>
