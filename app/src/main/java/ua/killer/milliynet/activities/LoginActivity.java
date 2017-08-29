@@ -42,11 +42,9 @@ public class LoginActivity extends Activity implements OnClickListener, OnLoginL
 		mContext = this;
 		sPrefs = Utils.getDefaultSPrefs(mContext);
 		
-		// ���� �������� �������
 		if (!sPrefs.contains("first_start"))
 			firstStart();
 		
-		// ��������� ��� �� ������������ �������������
 		if (!TextUtils.isEmpty(sPrefs.getString("user_token", "")))
 			startSettingsActivity();
 		
@@ -150,7 +148,8 @@ public class LoginActivity extends Activity implements OnClickListener, OnLoginL
 			.putString("user_token", user.getString("token"))
 			.putString("user_avatar", user.getString("avatar"))
 			.putInt("user_id", user.getInt("id"))
-			.commit();
+			.apply();
+
 			Toast.makeText(mContext, getResources().getString(R.string.message_login_success), Toast.LENGTH_SHORT).show();
 			Utils.addServiceToAlarm(mContext);
 			startSettingsActivity();
@@ -171,7 +170,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnLoginL
 		.putBoolean("sound", true)
 		.putBoolean("vibration", true)
 		.putString("refresh", "5")
-		.commit();
+		.apply();
 	}
 
 	private void startSettingsActivity() {

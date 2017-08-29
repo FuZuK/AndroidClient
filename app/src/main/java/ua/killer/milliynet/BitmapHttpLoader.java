@@ -48,10 +48,7 @@ public class BitmapHttpLoader extends AsyncTask<Void, Void, Bitmap> {
         	connection.setDoInput(true);
         	connection.connect();
         	return BitmapFactory.decodeStream(connection.getInputStream());
-        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-        } catch (IOException e) {
-//            e.printStackTrace();
+        } catch (Exception e) {
         }
         return null;
 	}
@@ -61,9 +58,7 @@ public class BitmapHttpLoader extends AsyncTask<Void, Void, Bitmap> {
 		if (listener != null)
 			try {
 				listener.onLoadFinish(result);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (Exception e) {
 			}
 	}
 	
