@@ -53,7 +53,9 @@ public class SettingsActivity extends PreferenceActivity {
 			@Override
 			public boolean onPreferenceChange(Preference pref, Object value) {
 				String lastValue = sPrefs.getString("refresh", "0");
-				sPrefs.edit().putString("refresh", value.toString()).commit();
+				sPrefs.edit()
+						.putString("refresh", value.toString())
+						.apply();
 				if (lastValue.equals("0") && !value.toString().equals("0"))
 					Utils.addServiceToAlarm(mContext);
 				else if (value.toString().equals("0") && !lastValue.equals("0"))

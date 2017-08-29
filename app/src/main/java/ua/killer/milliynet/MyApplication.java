@@ -8,8 +8,6 @@ public class MyApplication extends Application {
 
 	@Override
     public void onCreate() {
-		Log.v("myLogs", "mApp");
-		// ������� ������
 		RoboErrorReporter.bindReporter(this);
 
 		super.onCreate();

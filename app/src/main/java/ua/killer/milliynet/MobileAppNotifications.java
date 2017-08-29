@@ -56,8 +56,7 @@ public class MobileAppNotifications {
 		try {
 			counters = json.getJSONObject("counters");
 			contents = json.getJSONObject("contents");
-		} catch (JSONException e) {
-//			e.printStackTrace();
+		} catch (Exception e) {
 		}
 		
 		configsEditor = configs.getEditor();
@@ -78,7 +77,6 @@ public class MobileAppNotifications {
 					
 					Photo avatar = Photo.parse(messageUserAvatar);
 					avatar.setSize(128);
-					Log.v("myLogs", "url: " + avatar.getUrl());
 					BitmapHttpLoaderCache bmLoader = new BitmapHttpLoaderCache(avatar.getHash(), avatar.getUrl(), mContext, new BitmapHttpLoaderListener() {
 						
 						@Override
@@ -95,7 +93,6 @@ public class MobileAppNotifications {
 								sendNotif(R.drawable.mail, bitmap, barTitle, notifTitle, notifText, contentIntent, NOTIF_MAIL + messageUser.getInt("id"));
 								configs.lastMessageID = Math.max(configs.lastMessageID, messageID);
 							} catch (JSONException e) {
-								Log.v("myLogs", e.toString());
 							}
 						}
 						
@@ -103,7 +100,6 @@ public class MobileAppNotifications {
 					try {
 						bmLoader.load();
 					} catch (IOException e) {
-						Log.v("myLogs", e.toString());
 					}
 				}
 					
@@ -115,8 +111,7 @@ public class MobileAppNotifications {
 				PendingIntent contentIntent = PendingIntent.getActivity(mContext, 1, new Intent().setAction(Intent.ACTION_VIEW).setData(Uri.parse(Constants.URL_DISCUSSIONS)), 0);
 				String barTitle = countDiscussions + " " + Utils.strDeclension(countDiscussions, res.getString(R.string.discussions_1_new), res.getString(R.string.discussions_2_new), res.getString(R.string.discussions_5_new));
 				String notifTitle = res.getString(R.string.discussions);
-				String notifText = barTitle;
-				sendNotif(R.drawable.discussions, barTitle, notifTitle, notifText, contentIntent, NOTIF_DISCUSSIONS);
+				sendNotif(R.drawable.discussions, barTitle, notifTitle, barTitle, contentIntent, NOTIF_DISCUSSIONS);
 			}
 			configsEditor.putInt("lastCountDiscussions", countDiscussions);
 			
@@ -125,8 +120,7 @@ public class MobileAppNotifications {
 				PendingIntent contentIntent = PendingIntent.getActivity(mContext, 1, new Intent().setAction(Intent.ACTION_VIEW).setData(Uri.parse(Constants.URL_NOTIFICATION)), 0);
 				String barTitle = countNotification + " " + Utils.strDeclension(countNotification, res.getString(R.string.notifications_1_new), res.getString(R.string.notifications_2_new), res.getString(R.string.notifications_5_new));
 				String notifTitle = res.getString(R.string.notifications);
-				String notifText = barTitle;
-				sendNotif(R.drawable.notification, barTitle, notifTitle, notifText, contentIntent, NOTIF_NOTIFICATION);
+				sendNotif(R.drawable.notification, barTitle, notifTitle, barTitle, contentIntent, NOTIF_NOTIFICATION);
 			}
 			configsEditor.putInt("lastCountNotification", countNotification);
 			
@@ -135,8 +129,7 @@ public class MobileAppNotifications {
 				PendingIntent contentIntent = PendingIntent.getActivity(mContext, 1, new Intent().setAction(Intent.ACTION_VIEW).setData(Uri.parse(Constants.URL_TAPE)), 0);
 				String barTitle = countTape + " " + Utils.strDeclension(countTape, res.getString(R.string.tape_1_new), res.getString(R.string.tape_2_new), res.getString(R.string.tape_5_new)) + " " + res.getString(R.string.in_tape);
 				String notifTitle = res.getString(R.string.tape);
-				String notifText = barTitle;
-				sendNotif(R.drawable.tape, barTitle, notifTitle, notifText, contentIntent, NOTIF_TAPE);
+				sendNotif(R.drawable.tape, barTitle, notifTitle, barTitle, contentIntent, NOTIF_TAPE);
 			}
 			configsEditor.putInt("lastCountTape", countTape);
 			
@@ -178,8 +171,7 @@ public class MobileAppNotifications {
 					});
 					try {
 						bmLoader.load();
-					} catch (IOException e) {
-						Log.v("myLogs", e.toString());
+					} catch (Exception e) {
 					}
 				}
 			}
@@ -215,21 +207,19 @@ public class MobileAppNotifications {
 								notifText = res.getString(R.string.visited_your_page);
 								sendNotif(R.drawable.guests, bitmap, barTitle, notifTitle, notifText, contentIntent, NOTIF_GUESTS);
 								configs.lastNewGuestID = Math.max(configs.lastNewGuestID, guestID);
-							} catch (JSONException e) {
-								Log.v("myLogs", e.toString());
+							} catch (Exception e) {
 							}
 						}
 						
 					});
 					try {
 						bmLoader.load();
-					} catch (IOException e) {
+					} catch (Exception e) {
 					}
 				}
 			}
 			configsEditor.putInt("lastNewGuestID", configs.lastNewGuestID);
 		} catch (Exception e) {
-			Log.v("myLogs", e.toString());
 		}
 		
 		configsEditor.commit();
