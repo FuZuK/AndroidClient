@@ -36,7 +36,15 @@
             android:entries="@array/refreshs_values"
             android:entryValues="@array/refreshs_entries"
             android:key="refresh"
+            android:defaultValue="5"
             android:title="@string/prefs_interval" />
+
+        <ListPreference
+            android:entries="@array/offline_time_values"
+            android:entryValues="@array/offline_time_entries"
+            android:key="offline_time"
+            android:defaultValue="5"
+            android:title="@string/prefs_check_offline_time" />
     </PreferenceCategory>
 
     <Preference

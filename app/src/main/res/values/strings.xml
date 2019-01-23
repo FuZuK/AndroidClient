@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Milliy.Net</string>
+    <string name="app_name">flash-love.ru</string>
     <string name="action_settings">Настройки</string>
     <string name="dialog_loading">Загрузка</string>
     <string name="no_connection">Подключение к Интернету отсутствует</string>
@@ -14,6 +14,7 @@
     <string name="prefs_vibration">Вибрация</string>
     <string name="prefs_onlyWiFi">Только Wi-Fi</string>
     <string name="prefs_interval">Интервал обновления</string>
+    <string name="prefs_check_offline_time">Время оффлайн</string>
     <string name="second">секунда</string>
     <string name="seconds">секунд</string>
     <string name="minute">минута</string>

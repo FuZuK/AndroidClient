@@ -17,6 +17,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+
 import ua.killer.milliynet.application.Constants;
 import ua.killer.milliynet.application.Utils;
 import ua.killer.milliynet.cache.BitmapHttpLoaderCache;
@@ -61,7 +62,7 @@ public class MobileAppNotifications {
 		
 		configsEditor = configs.getEditor();
 		try {
-			
+
 			// сообщения
 			final int countMail = counters.getInt("mail");
 			if (countMail > 0 && configs.showMail) {
@@ -74,13 +75,14 @@ public class MobileAppNotifications {
 					final int messageID = message.getInt("id");
 					if (messageID <= configs.lastMessageID)
 						continue;
-					
+
 					Photo avatar = Photo.parse(messageUserAvatar);
 					avatar.setSize(128);
 					BitmapHttpLoaderCache bmLoader = new BitmapHttpLoaderCache(avatar.getHash(), avatar.getUrl(), mContext, new BitmapHttpLoaderListener() {
 						
 						@Override
-						public void onLoadStart() {}
+						public void onLoadStart() {
+						}
 		
 						@Override
 						public void onLoadFinish(Bitmap bitmap) {

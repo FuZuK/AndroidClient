@@ -1,7 +1,6 @@
 package ua.killer.milliynet.application;
 
 import android.app.AlarmManager;
-import android.app.Application;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -11,8 +10,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
 
-import ua.killer.milliynet.MyApplication;
-import ua.killer.milliynet.activities.LoginActivity;
 import ua.killer.milliynet.client.UserCheck;
 import ua.killer.milliynet.listeners.OnLoginListener;
 import ua.killer.milliynet.services.MobileAppService;

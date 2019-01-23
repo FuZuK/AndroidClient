@@ -21,6 +21,7 @@ import android.widget.Toast;
 import ua.killer.milliynet.R;
 import ua.killer.milliynet.application.Utils;
 import ua.killer.milliynet.client.UserCheck;
+import ua.killer.milliynet.configs.Settings;
 import ua.killer.milliynet.listeners.OnLoginListener;
 
 public class LoginActivity extends Activity implements OnClickListener, OnLoginListener {
@@ -121,7 +122,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnLoginL
 			Toast.makeText(mContext, getResources().getString(R.string.error_some_error) + ": " + e.toString(), Toast.LENGTH_SHORT).show();
 		}
 		try {
-			loginSuccess(result.getJSONObject("user"));
+			loginSuccess(result.getJSONObject("data").getJSONObject("user"));
 		} catch (Exception e) {
 			Toast.makeText(mContext, getResources().getString(R.string.error_some_error), Toast.LENGTH_SHORT).show();
 		}
@@ -170,6 +171,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnLoginL
 		.putBoolean("sound", true)
 		.putBoolean("vibration", true)
 		.putString("refresh", "5")
+		.putString("offline_time", "30")
 		.apply();
 	}
 

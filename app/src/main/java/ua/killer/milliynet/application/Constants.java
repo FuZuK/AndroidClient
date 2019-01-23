@@ -1,10 +1,11 @@
 package ua.killer.milliynet.application;
 
-public class Constants {
+import ua.killer.milliynet.configs.Settings;
 
-	public static String SERVER_HOST = "http://milliy.net";
-	public static String SERVER_AUTH_URL = SERVER_HOST + "/ajax/mobile_app/auth.php";
-	public static String SERVER_DATA_URL = SERVER_HOST + "/ajax/mobile_app/data.php";
+public class Constants {
+	public static String SERVER_HOST = Settings.getConfigValue("server_host");
+	public static String SERVER_AUTH_URL = SERVER_HOST + "/api/mobile_app/auth.php";
+	public static String SERVER_DATA_URL = SERVER_HOST + "/api/mobile_app/data.php";
 	
 	public static final String URL_NEW_MAIL = SERVER_HOST + "/new_mail.php";
 	public static final String URL_MAIL_KONT = SERVER_HOST + "/mail.php?id=%d";

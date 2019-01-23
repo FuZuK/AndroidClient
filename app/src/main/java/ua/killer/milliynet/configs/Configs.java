@@ -15,6 +15,7 @@ public class Configs implements OnSharedPreferenceChangeListener {
 	public int lastCountMail, lastCountDiscussions, lastCountNotification, lastCountTape;
 	public int lastMessageID, lastNewFriendID, lastNewGuestID;
 	public int refresh;
+	public int offlineTime;
 	public String userToken;
 	
 	public Configs(Context _mContext) {
@@ -36,7 +37,8 @@ public class Configs implements OnSharedPreferenceChangeListener {
 		playVibration = sPrefs.getBoolean("vibration", false);
 		onlyWiFi = sPrefs.getBoolean("onlyWiFi", false);
 		refresh = Integer.valueOf(sPrefs.getString("refresh", "5"));
-		
+		offlineTime = Integer.valueOf(sPrefs.getString("offline_time", "30")) * 60;
+
 		lastCountMail = sPrefs.getInt("lastCountMail", 0);
 		lastCountDiscussions = sPrefs.getInt("lastCountDiscussions", 0);
 		lastCountNotification = sPrefs.getInt("lastCountNotification", 0);

@@ -53,6 +53,7 @@ public class MobileAppService extends Service implements OnServerConnectListener
 		Map<Object, Object> data = new HashMap<Object, Object>();
 		data.put("token", configs.userToken);
 		data.put("id", configs.userID);
+		data.put("offline_time", configs.offlineTime);
 		ServerConnector connector = new ServerConnector(data, this);
 		try {
 			connector.send(Constants.SERVER_DATA_URL);
@@ -83,9 +84,8 @@ public class MobileAppService extends Service implements OnServerConnectListener
 			
 			MobileAppNotifications appNotifs = new MobileAppNotifications(mContext);
 			appNotifs.setNotificationsCompleteListener(this);
-			appNotifs.handleJSON(json);
+			appNotifs.handleJSON(json.getJSONObject("data"));
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

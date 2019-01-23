@@ -23,5 +23,20 @@
         <item>2 минуты</item>
         <item>3 минуты</item>
     </string-array>
-
+    <string-array name="offline_time_entries">
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+    </string-array>
+    <string-array name="offline_time_values">
+        <item>5 минут</item>
+        <item>10 минут</item>
+        <item>20 минут</item>
+        <item>30 минут</item>
+        <item>1 час</item>
+        <item>2 часа</item>
+    </string-array>
 </resources>
