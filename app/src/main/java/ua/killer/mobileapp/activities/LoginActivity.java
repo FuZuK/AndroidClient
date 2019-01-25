@@ -21,7 +21,6 @@ import android.widget.Toast;
 import ua.killer.mobileapp.R;
 import ua.killer.mobileapp.application.Utils;
 import ua.killer.mobileapp.client.UserCheck;
-import ua.killer.mobileapp.configs.Settings;
 import ua.killer.mobileapp.listeners.OnLoginListener;
 
 public class LoginActivity extends Activity implements OnClickListener, OnLoginListener {
@@ -39,7 +38,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnLoginL
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity_layout);
-		
+
 		mContext = this;
 		sPrefs = Utils.getDefaultSPrefs(mContext);
 		

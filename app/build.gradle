@@ -14,14 +14,19 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        debug {
-            applicationIdSuffix '.debug'
+    signingConfigs {
+        release {
+            storeFile file(props.getProperty("signingConfigs.release.storeFile"))
+            storePassword props.getProperty("signingConfigs.release.storePassword")
+            keyAlias props.getProperty("signingConfigs.release.keyAlias")
+            keyPassword props.getProperty("signingConfigs.release.keyPassword")
         }
-
+    }
+    buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }

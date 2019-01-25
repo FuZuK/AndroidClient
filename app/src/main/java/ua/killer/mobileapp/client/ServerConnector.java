@@ -53,15 +53,15 @@ public class ServerConnector {
 				body.add(entry.getKey().toString(), entry.getValue().toString());
 			}
 
-			Request req = new Request.Builder()
-					.url(url)
-					.post(body.build())
-					.build();
-
 			try {
+				Request req = new Request.Builder()
+						.url(url)
+						.post(body.build())
+						.build();
 				Response res = client.newCall(req).execute();
 				responseText = res.body().string().trim();
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 
 			return null;
