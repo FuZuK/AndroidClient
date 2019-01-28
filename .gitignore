@@ -1,11 +1,11 @@
 *.iml
 .gradle
-/local.properties
+local.properties
 .idea
 .DS_Store
-/build
-/captures
+build
+captures
 .externalNativeBuild
 app/app-release.apk
 app/src/main/res/raw/config.properties
-app/build.properties
+app/config.properties
