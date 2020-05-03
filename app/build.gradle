@@ -8,6 +8,7 @@ android {
     defaultConfig {
         applicationId config.getProperty("applicationId")
         minSdkVersion 9
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 19
         versionCode 1
         versionName "1.0"
