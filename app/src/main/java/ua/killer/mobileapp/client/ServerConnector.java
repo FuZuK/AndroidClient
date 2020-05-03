@@ -35,7 +35,7 @@ public class ServerConnector {
 	public void setOnServerConnectListener(OnServerConnectListener _listener) {
 		this.listener = _listener;
 	}
-	
+
 	private class Connecting extends AsyncTask<Void, Void, Void> {
 		private String responseText;
 		
